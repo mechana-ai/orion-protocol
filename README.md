@@ -16,7 +16,7 @@ For using ORION protocol, simply point your agent to the @ORION_PROTOCOL.md file
 
 The script is here. just point your agent to it.  for about 80% of debugging, this is enough.
 
-[ORION Protocol Docs](ORION_PROTOCOL.md)
+[ORION_PROTOCOL.md](ORION_PROTOCOL.md)
 
 By referencing the work of Francis Bacon, the LLM is sort of 'state-shocked' into an entirely new context. Sense-making from 400 years ago. That seems to be enough to slap the models out of the annoying habit of mistaking code review for actual debugging. The strong work and writing of Bacon overrides the mal-adaptation of LLM's to misunderstand code review of non running code for actual debugging.   
 
