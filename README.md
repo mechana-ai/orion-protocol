@@ -2,32 +2,32 @@
 
 `orion-protocol` is a suite of AI debugging tools. Or more simply, a prompt script.. the ORION Protocol for lighterweight debugging, and a MCP debugging ledger (historia-naturalis) for more stubborn or complex problems.
 
-It is meant for bug investigations that are getting noisy, repetitive, or theory-heavy. The core idea is simple:
-
-- record observations separately from theories
-- record attempts and outcomes
-- preserve archive context without confusing it for field truth
-- run a History Pass before chasing a familiar failure again
-- activate ORION when the session needs a hard reset into empirical debugging
-
-This package can be used:
-
-- as a Python library
-- as an MCP server over `stdio` or HTTP
-
 ## Why this exists
 
 Normal debugging with AI often fails by:
 
 - not confirming runtime facts over guessing what code might do on execution
-- making vague guesses based on pattern matching instead of research of the execution
+- making vague guesses based on pattern matching instead of research of the execution environment
 - making repeated failed attempts that accumulates code like a thicket that is never cleaned out
-- holding to stale frames after proving something wrong, AI will attempt that same fix again a few turns later
+- holding to stale frames after proving something wrong, AI will attempt that same fix again a few turns later, slowly wrapping your code in alien gauze.
 - AI occassionally resists outside research
 
-ORION Protocol gives those different shapes so a debugging session can stay falsifiable instead of turning into narrative sludge.
-
 For using ORION protocol, simply point your agent to the @ORION_PROTOCOL.md file and tell it 'Implement ORION PROTOCOL on [your bug description]'
+
+The script is here. just point your agent to it.  for about 80% of debugging, this is enough.
+
+[ORION Protocol Docs](ORION_PROTOCOL.md)
+
+By referencing the work of Francis Bacon, the LLM is sort of 'state-shocked' into an entirely new context. Sense-making from 400 years ago. That seems to be enough to slap the models out of the annoying habit of mistaking code review for actual debugging. The strong work and writing of Bacon overrides the mal-adaptation of LLM's to misunderstand code review of non running code for actual debugging.   
+
+The core mandate is simple:
+
+- record observations separately from theories
+- record attempts and outcomes
+- Dont confuse archive (just the code sitting in a repo) with field truth (the executable environment).
+- run a History Pass before chasing a familiar failure again
+
+The MCP server takes a bit more effort and you have to tell Agents to use it 'OR ELSE' because they are lazy about it. You must say, use this tool to debug or I will stop the session again and again etc.
 
 Instructions for using the more robust MCP server are below:
 
