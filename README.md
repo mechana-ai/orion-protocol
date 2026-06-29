@@ -6,7 +6,7 @@ orion-protocol includes two powerful AI debugging tools:
 1. **`ORION_PROTOCOL.md`**: A lightweight prompt script. Copy it to a folder, point your AI to it, and tell it to use it. If you can point the AI to the logs, great. If not, tell it you will paste whatever logs it needs and to loop you in.
 2. **`historia-naturalis`**: An MCP debugging ledger server for more stubborn or complex problems. 
 
-Our friends were using it and seeing bugs resolved very fast, so they insisted we share it.
+Our colleagues were using it and seeing bugs resolved very fast, so they insisted we share it.
 
 ---
 
