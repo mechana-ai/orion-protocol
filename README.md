@@ -22,7 +22,9 @@ Maybe AI it needed an education.  Based on a hunch, we realized, AI doesn’t us
 
 That did the trick.
 
-We pointed my agent to the work of Francis Bacon. 1620.  [The Great Instuartion](https://www.fbrt.org.uk/hermes/great-instauration/).  Instauration means restoration. Bacon believed humanity needed to restore its connection with nature and regain the mastery over creation. **Good Plan.**
+We pointed my agent to the work of Francis Bacon. 1620.  [The Great Instuartion](https://www.fbrt.org.uk/hermes/great-instauration/).  Instauration means restoration. Bacon believed humanity needed to restore its connection with nature and regain the mastery over creation. 
+
+**Good Plan.**
 
 Telling AI to debug instead of code review and pattern match to solve problems wasnt enough.
 
