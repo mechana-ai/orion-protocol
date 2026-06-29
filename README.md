@@ -1,16 +1,15 @@
 # ORION Protocol
 
-`orion-protocol` is a suite of AI debugging tools. Or more simply, 
+`orion-protocol` includes two powerful AI debugging tools:
 
 **A prompt script:** the [ORION_PROTOCOL.md](ORION_PROTOCOL.md) for most debugging is enough.
 
-You can just copy the script to a folder and point AI to it and tell it to use it.  Thats it. 
+  You can just copy the script to a folder and point AI to it and tell it to use it.  Thats it. 
+  If you can point AI to the logs great. if not, tell it you will paste whatever logs it needs and to loop you in.
 
-If you can point AI to the logs great. if not, tell it you will paste whatever logs it needs and to loop you in.
+  Our friends were using it and seeing bugs resolved very fast so they insisted we share it.  
 
-Our friends were using it and seeing bugs resolved very fast so they insisted we share it.  
-
-There is also a **MCP debugging ledger** (historia-naturalis) for more stubborn or complex problems.
+**An MCP debugging ledger** (historia-naturalis) for more stubborn or complex problems.
 
 ## Why this exists
 
