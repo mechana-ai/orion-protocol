@@ -1,5 +1,7 @@
-<img width="444" height="691" alt="image" src="https://github.com/user-attachments/assets/db6b5b94-0d12-4e45-9f3e-4a8fc5d2eee5" />
+
 # ORION Protocol
+
+<img width="444" height="691" alt="image" src="https://github.com/user-attachments/assets/db6b5b94-0d12-4e45-9f3e-4a8fc5d2eee5" />
 
 `orion-protocol` includes two powerful AI debugging tools:
 
