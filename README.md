@@ -1,3 +1,4 @@
+<img width="1029" height="1600" alt="image" align='left' src="https://github.com/user-attachments/assets/9ec06784-a4a7-4b75-a958-939cedcbb724" />
 # ORION Protocol
 
 `orion-protocol` includes two powerful AI debugging tools designed to break LLMs out of repetitive, hallucinated debugging loops and force them into strict, empirical troubleshooting.
