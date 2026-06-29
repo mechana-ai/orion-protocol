@@ -2,7 +2,7 @@
 
 `orion-protocol` includes two powerful AI debugging tools:
 
-**A prompt script:** the [ORION_PROTOCOL.md](ORION_PROTOCOL.md) for most debugging is enough.
+**A prompt script:** the [ORION_PROTOCOL.md](ORION_PROTOCOL.md) is enough for most debugging sessions.
 
   You can just copy the script to a folder and point AI to it and tell it to use it.  Thats it. 
   If you can point AI to the logs great. if not, tell it you will paste whatever logs it needs and to loop you in.
@@ -27,7 +27,7 @@ We pointed my agent to the work of Francis Bacon. 1620.  [The Great Instuartion]
 
 Telling AI to debug instead of code review and pattern match to solve problems wasnt enough.
 
-But by invoking Bacon, we managed to put AI into a totally different ‘attention head’. Reorienting the LLM to enter to a highly specific, sparsely populated cluster of its training data—early scientific philosophy using empirical methodology lit something up.
+But by invoking Bacon, we managed to put AI into a totally different **‘attention head’**. Reorienting the LLM to enter to a highly specific, sparsely populated cluster of its training data—early scientific philosophy using empirical methodology lit something up.
 
 The trance broke.  AI started to debug, and we broke out of those running circles accumulating code creft.  
 
@@ -37,16 +37,16 @@ Another reason it worked:  Clear distinctions between ‘**the archive**’ (bac
 
 [ORION_PROTOCOL.md](ORION_PROTOCOL.md)
 
-By referencing the work of Francis Bacon, the LLM is sort of 'state-shocked' into an entirely new context. Sense-making from 400 years ago. That seems to be enough to slap the models out of the annoying habit of mistaking code review for actual debugging. The strong work and writing of Bacon overrides the mal-adaptation of LLM's to misunderstand code review of static code for actual debugging.   
+By referencing the work of Francis Bacon, the LLM is sort of '**state-shocked**' into an entirely new context. Sense-making from 400 years ago. That seems to be enough to slap the models out of the annoying habit of mistaking code review for actual debugging. _The strong work and writing of Bacon overrides the mal-adaptation of LLM's to misunderstand code review of static code for actual debugging._
 
-The core mandate is simple:
+The core direction is simple:
 
 - record observations separately from theories
 - record attempts and outcomes
 - Dont confuse archive (just the code sitting in a repo) with field truth (the executable environment).
 - run a History Pass before chasing a familiar failure again
 
-The MCP server takes a bit more effort and you have to tell Agents to use it 'OR ELSE' because they are lazy about it. You must say, use this tool to debug or I will stop the session again and again etc. 
+The MCP server takes a bit more effort and you have to insist that the AI use it in our experience. 
 
 Instructions for using the MCP server are below:
 
