@@ -70,6 +70,6 @@ The database is created automatically on first run.
 
 ## Support the Project
 
-Free for individuals and students. Commercial teams (5+) require a license — see [LICENSE](LICENSE) for details.
+Free for individuals. Teams of 2+ require a commercial license — see [LICENSE](LICENSE) for details.
 
 ☕ [Buy Us a Coffee](https://buy.polar.sh/polar_cl_3dtTjfHjcJvCwlFVjfruyptIeEBwkcwTdQ6wd0SLFuG) · 🏢 [Commercial Team License](https://buy.polar.sh/polar_cl_PJQKNTc2nfN8pbVL9sxXs5E3IGIEKPfbcy8KC36eRgP)
