@@ -34,36 +34,9 @@ Because these concepts map cleanly, agents are left with no room to return to lo
 
 ## 🛠️ ORION_PROTOCOL.md Prompt Script
 
-Use ORION when debugging gets weird, repetitive, or theory-heavy.
+Use ORION when debugging gets weird, repetitive, or theory-heavy. Copy [`ORION_PROTOCOL.md`](ORION_PROTOCOL.md) into your project, point your AI to it, and tell it:
 
-### Definitions
-* **ORION** means empirical debugging over theoretical debugging.
-* **ORION** is a mode switch away from architectural speculation and toward runtime evidence.
-* *Note: If you are still mainly reading code, narrating architecture, or proposing likely explanations, you are not doing ORION yet.*
-
-### Invocation
 > Implement ORION PROTOCOL
-
-### Rules and Directives
-
-#### 1. Core Rules
-* **Separate observations from theories:** Record observations separately from theories. Treat only confirmed observations as ground truth.
-* **Record attempts and outcomes:** Log failed attempts and do not recycle them.
-* **The Golden Rule:** The archive suggests. The field decides. Do not confuse the archive (source code) with field truth (the executable environment).
-* **Run a History Pass:** Search history using both specific keywords and the broader incident pattern before chasing a familiar failure again.
-* **Name Idols:** Name idols when the session starts drifting.
-
-#### 2. Empirical Mode vs. Theoretical Mode
-* **Empirical means:** Install the smallest runtime instrumentation first. Prefer logs, readbacks, payload captures, DB row checks, network traces, and render-time probes over code archaeology. Do not spend multiple turns tracing source and narrating theories before adding debug output. Source inspection is allowed only to decide where to instrument, not as a substitute for instrumentation.
-* **Theoretical means:** Reading files to build a story; inferring behavior from architecture alone; saying *"likely,"* *"probably,"* or *"I suspect"* without a runtime check; proposing fixes before identifying the failing stage with evidence.
-* **The Priority Rule:** When ORION is invoked, empirical work wins over theoretical work. In any conflict between tracing code and installing probes, install probes. Theory may help choose the next probe, but theory does not count as progress.
-
-#### 3. Execution Directives
-* **History Pass Rule:** Search prior sessions, issues, and adjacent threads. Pull exact prior observations, failed attempts, and known fixes when possible. Import history as archive context, not field truth.
-* **Observation Rule:** If you did not inspect the runtime state, logs, payload, deploy state, or code path directly, do not present the claim as fact. *"I read the code"* is not an observation about system behavior. Architectural storytelling is not evidence. A claim becomes field truth only after a runtime check or direct state inspection.
-* **First-Move Rule:** On weird bugs, the first concrete action must be one of: add a targeted log, add a readback/assertion, or inspect the live payload/DB row/network response/rendered props. Do not begin with broad tracing across multiple files unless strictly necessary to place the probe.
-* **Anti-Fantasy Rule:** Never patch based on inferred architecture alone. Never offer a speculative fix before showing the evidence that isolates the failing stage. If evidence is missing, say `missing evidence` and add instrumentation.
-* **Reframe Rule:** If you stop getting new confirmed observations, reframe the investigation instead of repeating the same theory.
 
 ---
 
@@ -73,13 +46,30 @@ The MCP server takes a bit more effort, and you have to insist that the AI use i
 
 Instructions for using the MCP server are below:
 
+### Install
+
+```bash
+pip install git+https://github.com/mechana-ai/orion-protocol.git
+```
+
+### Configure Your MCP Client
+
 ```json
 {
   "mcpServers": {
     "historia-naturalis": {
-      "command": "node",
-      "args": ["/path/to/orion-protocol/mcp/dist/index.js"]
+      "command": "historia-naturalis"
     }
   }
 }
 ```
+
+The database is created automatically on first run.
+
+---
+
+## Support the Project
+
+Free for individuals and students. Commercial teams (5+) require a license — see [LICENSE](LICENSE) for details.
+
+☕ [Buy Us a Coffee](https://buy.polar.sh/polar_cl_3dtTjfHjcJvCwlFVjfruyptIeEBwkcwTdQ6wd0SLFuG) · 🏢 [Commercial Team License](https://buy.polar.sh/polar_cl_PJQKNTc2nfN8pbVL9sxXs5E3IGIEKPfbcy8KC36eRgP)
