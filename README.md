@@ -2,33 +2,41 @@
 
 `orion-protocol` is a suite of AI debugging tools. Or more simply, 
 
-A prompt script the [ORION_PROTOCOL.md](ORION_PROTOCOL.md) for most debugging is enough.
+**A prompt script:** the [ORION_PROTOCOL.md](ORION_PROTOCOL.md) for most debugging is enough.
 
 You can just copy the script to a folder and point AI to it and tell it to use it.  Thats it. 
 
 If you can point AI to the logs great. if not, tell it you will paste whatever logs it needs and to loop you in.
 
-Our friends were using it and seeing bugs resolved very fast so they insisted We share it.  
+Our friends were using it and seeing bugs resolved very fast so they insisted we share it.  
 
-There is also a MCP debugging ledger (historia-naturalis) for more stubborn or complex problems.
+There is also a **MCP debugging ledger** (historia-naturalis) for more stubborn or complex problems.
 
 ## Why this exists
 
-Normal debugging with AI often fails by:
+Agents will begin to loop in failing cycles of debugging and even return to past failed attempts.  Add a fatigued developer or ‘viber’ that starts using curse words to try to goad the agent into success and the only way out is generally a move to ‘touch grass’ and a git restore.
 
-- not confirming runtime facts over guessing what code might do on execution
-- making vague guesses based on pattern matching instead of research of the execution environment
-- making repeated failed attempts that accumulates code like a thicket that is never cleaned out
-- holding to stale frames after proving something wrong, AI will attempt that same fix again a few turns later, slowly wrapping your code in alien gauze.
-- AI occassionally resists outside research
+[ORION_PROTOCOL.md](ORION_PROTOCOL.md) was created to address this recurring problem.
 
-For using ORION protocol, simply point your agent to the @ORION_PROTOCOL.md file and tell it 'Implement ORION PROTOCOL on [your bug description]'
+Maybe AI it needed an education.  Based on a hunch, we realized, AI doesn’t use scientific methods.  We went back further than Newton.  We needed to slap AI  into some new awareness, get it on other neural networks, old ones, to shock it out of this horrible RLHF hellspace.  
 
-The script is here. just point your agent to it.  for about 80% of debugging, this is enough.
+That did the trick.
+
+We pointed my agent to the work of Francis Bacon. 1620.  [The Great Instuartion](https://www.fbrt.org.uk/hermes/great-instauration/).  Instauration means restoration. Bacon believed humanity needed to restore its connection with nature and regain the mastery over creation. **Good Plan.**
+
+Telling AI to debug instead of code review and pattern match to solve problems wasnt enough.
+
+But by invoking Bacon, we managed to put AI into a totally different ‘attention head’. Reorienting the LLM to enter to a highly specific, sparsely populated cluster of its training data—early scientific philosophy using empirical methodology lit something up.
+
+The trance broke.  AI started to debug, and we broke out of those running circles accumulating code creft.  
+
+Another reason this worked: Instead of attempting to get results by **Identity Shifting**  “You are a senior engineer”, this method uses **Epistemic Shifting**. Moving the LLM into a different theory of knowledge.  I’ve always been suspicious of those ‘pretend you are a super genius' prompts.  Sounds like AI affirmations.
+
+Another reason it worked:  Clear distinctions between ‘**the archive**’ (bacon’s term for the corpus of ideas around a subject, and ‘**nature**’ the actual environment in question), mapped very well on to ‘**source code**’ and ‘**run-time environment**'.  Agents were left with no room to return to its low effort semantic matching and has to work to debug in this system. Theory, oberservation, new theory. Loop as needed.
 
 [ORION_PROTOCOL.md](ORION_PROTOCOL.md)
 
-By referencing the work of Francis Bacon, the LLM is sort of 'state-shocked' into an entirely new context. Sense-making from 400 years ago. That seems to be enough to slap the models out of the annoying habit of mistaking code review for actual debugging. The strong work and writing of Bacon overrides the mal-adaptation of LLM's to misunderstand code review of non running code for actual debugging.   
+By referencing the work of Francis Bacon, the LLM is sort of 'state-shocked' into an entirely new context. Sense-making from 400 years ago. That seems to be enough to slap the models out of the annoying habit of mistaking code review for actual debugging. The strong work and writing of Bacon overrides the mal-adaptation of LLM's to misunderstand code review of static code for actual debugging.   
 
 The core mandate is simple:
 
@@ -37,9 +45,9 @@ The core mandate is simple:
 - Dont confuse archive (just the code sitting in a repo) with field truth (the executable environment).
 - run a History Pass before chasing a familiar failure again
 
-The MCP server takes a bit more effort and you have to tell Agents to use it 'OR ELSE' because they are lazy about it. You must say, use this tool to debug or I will stop the session again and again etc.
+The MCP server takes a bit more effort and you have to tell Agents to use it 'OR ELSE' because they are lazy about it. You must say, use this tool to debug or I will stop the session again and again etc. 
 
-Instructions for using the more robust MCP server are below:
+Instructions for using the MCP server are below:
 
 ## Requirements
 
@@ -156,33 +164,4 @@ Resources/prompts:
 - `orion://protocol`
 - `implement_orion_protocol`
 
-## What is ready
 
-- core data model
-- SQLite-backed ledger store
-- ORION and History Pass prompt generation
-- MCP server surface
-- smoke test
-- package build
-- CLI entrypoint
-
-## What is not ready
-
-- no CI yet
-- no release process yet
-- no schema migration/versioning story yet
-- no concurrency/process-locking guarantees for multi-client access
-- no polished external docs beyond this README
-
-## Privacy note
-
-If you trial this against a private codebase or product, keep the actual investigation transcript private. The public package docs should stay generic; the real debugging ledger can remain local or private.
-
-## Suggested release path
-
-1. Commit the initial repo cleanly.
-2. Add CI for `pytest` and `uv build`.
-3. Trial the tool on one real bug investigation.
-4. Tighten the MCP docs based on that real usage.
-5. Tag `0.1.0`.
-6. Decide whether distribution is GitHub-only, PyPI, or both.
