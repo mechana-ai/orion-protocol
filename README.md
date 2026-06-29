@@ -1,55 +1,86 @@
-
 # ORION Protocol
 
-<img width="444" height="691" alt="image" align="left" src="https://github.com/user-attachments/assets/db6b5b94-0d12-4e45-9f3e-4a8fc5d2eee5" />
+`orion-protocol` includes two powerful AI debugging tools designed to break LLMs out of repetitive, hallucinated debugging loops and force them into strict, empirical troubleshooting.
 
-`orion-protocol` includes two powerful AI debugging tools:
+1. **`ORION_PROTOCOL.md`**: A lightweight prompt script. Copy it to a folder, point your AI agent to it, and tell it to execute. 
+2. **`historia-naturalis`**: A Model Context Protocol (MCP) debugging ledger server for stubborn, complex architectural problems.
 
-**A prompt script:** the [ORION_PROTOCOL.md](ORION_PROTOCOL.md) is enough for most debugging sessions.
+Our friends used this protocol, watched their nastiest bugs vanish in minutes, and insisted we open-source it.
 
-  You can just copy the script to a folder and point AI to it and tell it to use it.  Thats it. 
-  If you can point AI to the logs great. if not, tell it you will paste whatever logs it needs and to loop you in.
+---
 
-  Our friends were using it and seeing bugs resolved very fast so they insisted we share it.  
+## Why This Exists: The "Vibe-Coding" Loop of Doom
 
-**An MCP debugging ledger** (historia-naturalis) for more stubborn or complex problems.
+When debugging fails, AI agents often enter a doom-loop. They repeat the same failed fixes, cycle through bad assumptions, and hallucinate structural theories. Add a fatigued developer or a "viber" who starts cursing at the LLM to goad it into success, and the only way out is usually a depressing `git restore` and a walk outside to touch grass.
 
-## Why this exists
+`ORION_PROTOCOL.md` was built to kill this cycle.
 
-Agents will begin to loop in failing cycles of debugging and even return to past failed attempts.  Add a fatigued developer or ‘viber’ that starts using curse words to try to goad the agent into success and the only way out is generally a move to ‘touch grass’ and a git restore.
+### The Secret: Epistemic Shifting vs. Identity Shifting
+Most prompt engineering relies on **Identity Shifting** (*"You are a senior staff engineer"*). This often fails because the LLM resorts to pattern-matching high-level architectural talk instead of doing the dirty work of debugging. 
 
-[ORION_PROTOCOL.md](ORION_PROTOCOL.md) was created to address this recurring problem.
+ORION uses **Epistemic Shifting**—forcing the LLM into an entirely different theory of knowledge. 
 
-Maybe AI it needed an education.  Based on a hunch, we realized, AI doesn’t use scientific methods.  We went back further than Newton.  We needed to slap AI  into some new awareness, get it on other neural networks, old ones, to shock it out of this horrible RLHF hellspace.  
+We went back further than Newton. We pointed the agent to the work of Francis Bacon (1620, *The Great Instauration*). By invoking early scientific empiricism, we shock the LLM into an isolated, highly specific cluster of its training data. The strong prose of Bacon overrides the RLHF maladaptation of modern models, breaking the trance. The AI stops doing passive code review and starts actual, empirical debugging.
 
-That did the trick.
+### Mapping 1620 Philosophy to Modern Code
+Bacon distinguished between **the Archive** (the historical corpus of ideas) and **Nature** (the physical world). ORION maps this perfectly to modern software engineering:
+* **The Archive** = The static source code sitting in your repository.
+* **Nature / The Field** = The actual, living runtime environment.
 
-We pointed my agent to the work of Francis Bacon. 1620.  [The Great Instuartion](https://www.fbrt.org.uk/hermes/great-instauration/).  Instauration means restoration. Bacon believed humanity needed to restore its connection with nature and regain the mastery over creation. 
+By enforcing this boundary, the agent cannot lazily semantic-match its way out of a problem. It is forced into a loop of hypothesis, observation, and runtime verification.
 
-**Good Plan.**
+---
 
-Telling AI to debug instead of code review and pattern match to solve problems wasnt enough.
+## 🛠️ The Prompt: ORION_PROTOCOL.md
 
-But by invoking Bacon, we managed to put AI into a totally different **‘attention head’**. Reorienting the LLM to enter to a highly specific, sparsely populated cluster of its training data—early scientific philosophy using empirical methodology lit something up.
+Invoke this prompt when debugging gets weird, repetitive, or overly theoretical.
 
-The trance broke.  AI started to debug, and we broke out of those running circles accumulating code creft.  
+### Definition
+* **ORION** means empirical debugging over theoretical speculation.
+* **ORION** is a mode switch away from architectural storytelling and toward runtime evidence.
+* *Note: If you are still mainly reading files, narrating architecture, or proposing "likely" explanations, you are not doing ORION yet.*
 
-Another reason this worked: Instead of attempting to get results by **Identity Shifting**  “You are a senior engineer”, this method uses **Epistemic Shifting**. Moving the LLM into a different theory of knowledge.  I’ve always been suspicious of those ‘pretend you are a super genius' prompts.  Sounds like AI affirmations.
+### Invocation
+> Implement ORION PROTOCOL
 
-Another reason it worked:  Clear distinctions between ‘**the archive**’ (bacon’s term for the corpus of ideas around a subject, and ‘**nature**’ the actual environment in question), mapped very well on to ‘**source code**’ and ‘**run-time environment**'.  Agents were left with no room to return to its low effort semantic matching and has to work to debug in this system. Theory, oberservation, new theory. Loop as needed.
+### The Core Commands
 
-[ORION_PROTOCOL.md](ORION_PROTOCOL.md)
+#### 1. The Core Directives
+* **Separate Observations from Theories:** Treat only confirmed runtime observations as ground truth.
+* **Run a History Pass:** Search prior sessions, issues, and adjacent threads using both specific keywords and broader incident patterns. Import history as archive context, never as field truth.
+* **Record Failures:** Log failed attempts explicitly. Never recycle a failed solution.
+* **Name Your Idols:** Call out false assumptions and architectural biases the moment the session begins to drift.
+* **The Golden Rule:** *The Archive suggests. The Field decides.*
 
-By referencing the work of Francis Bacon, the LLM is sort of '**state-shocked**' into an entirely new context. Sense-making from 400 years ago. That seems to be enough to slap the models out of the annoying habit of mistaking code review for actual debugging. _The strong work and writing of Bacon overrides the mal-adaptation of LLM's to misunderstand code review of static code for actual debugging._
+#### 2. Defining "Empirical" vs. "Theoretical"
+* **Empirical Mode:** Install the smallest runtime instrumentation first. Prioritize logs, readbacks, payload captures, DB row checks, network traces, and render-time probes over code archaeology. Do not spend multiple turns tracing source paths before adding debug output. Source inspection is allowed *only* to decide where to place a probe.
+* **Theoretical Mode (Forbidden):** Reading files to build a narrative; inferring behavior from architecture alone; using words like *"likely,"* *"probably,"* or *"I suspect"* without a runtime check; proposing patches before isolating the failing stage with hard evidence.
 
-The core direction is simple:
+#### 3. Execution Rules
+* **First-Move Rule:** On complex bugs, the first concrete action must be adding a targeted log, an assertion, or inspecting a live payload/DB row. Do not begin with broad tracing across files unless strictly necessary to place the probe.
+* **Anti-Fantasy Rule:** Never patch code based on inferred architecture alone. If evidence is missing, state `missing evidence` and install instrumentation immediately.
+* **Reframe Rule:** If you stop generating new, confirmed observations, reframe the entire investigation instead of repeating the same theory.
 
-- record observations separately from theories
-- record attempts and outcomes
-- Dont confuse archive (just the code sitting in a repo) with field truth (the executable environment).
-- run a History Pass before chasing a familiar failure again
+---
 
-The MCP server takes a bit more effort and you have to insist that the AI use it in our experience. 
+## 🖥️ The MCP Server: `historia-naturalis`
+
+For deep architectural bugs, the prompt template isn't enough. You need to enforce a stateful ledger. The `historia-naturalis` MCP server builds a structured ledger directly into the LLM's context window. 
+
+*Note: In our experience, you must explicitly insist that the AI use this tool.*
+
+### Installation & Setup
+
+```json
+{
+  "mcpServers": {
+    "historia-naturalis": {
+      "command": "node",
+      "args": ["/path/to/orion-protocol/mcp/dist/index.js"]
+    }
+  }
+}
+```
 
 Instructions for using the MCP server are below:
 
